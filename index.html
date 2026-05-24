@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>蒼 AOI WELLNESS HOUSE — 整えるジム｜サウナ・ピラティス・瞑想</title>
+  <meta name="description" content="鍛えるのではなく、整える。サウナ・水風呂・外気浴・ピラティス・瞑想を主軸とした、retreat の静けさを湛えた都市型ウェルネスハウス。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@300;400;500;700&family=Klee+One:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :where(html,body){
+      line-break:strict;
+      word-break:normal;
+      overflow-wrap:break-word;
+      hanging-punctuation:allow-end;
+    }
+    :where(h1,h2,h3,h4,p,li,dt,dd,figcaption,blockquote,a,span,small,strong,em){
+      line-break:strict;
+      word-break:auto-phrase;
+      overflow-wrap:break-word;
+    }
+    :where(h1,h2,h3,h4,[class*=title],[class*=brand],[class*=label]){text-wrap:balance}
+    :where(p,li,dd,figcaption){text-wrap:pretty}
+
+    :root{
+      /* Palette — 墨・苔・木・障子 */
+      --sumi:    #1c1a17;
+      --kinari:  #f1ece2;
+      --shoji:   #e8e2d3;
+      --koke:    #5a6b4a;
+      --mokume:  #8c6a4a;
+      --ishi:    #b7b1a4;
+      --yuge:    #ffffff;
+
+      /* Typography */
+      --font-mincho: 'Shippori Mincho B1','Hiragino Mincho ProN',serif;
+      --font-sans:   'Noto Sans JP','Inter',system-ui,sans-serif;
+      --font-kana:   'Klee One','Shippori Mincho B1',serif;
+
+      /* Rhythm */
+      --space-xl: clamp(4rem,8vw,8rem);
+      --space-lg: clamp(2.5rem,5vw,5rem);
+      --space-md: 1.5rem;
+      --leading-body: 2.1;
+      --tracking-mincho: 0.08em;
+
+      --rule: 1px solid rgba(28,26,23,.18);
+    }
+
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      background:var(--kinari);
+      color:var(--sumi);
+      font-family:var(--font-sans);
+      font-weight:300;
+      line-height:var(--leading-body);
+      letter-spacing:.04em;
+      font-variant-numeric:lining-nums proportional-nums;
+      overflow-x:hidden;
+    }
+    @media(max-width:767px){
+      body{line-height:clamp(1.7,2.1vw,2.1)}
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%;height:auto}
+
+    *:focus-visible{
+      outline:2px solid var(--koke);
+      outline-offset:3px;
+      border-radius:2px;
+    }
+
+    /* 共通：見出し */
+    h1,h2,h3,h4{
+      font-family:var(--font-mincho);
+      font-weight:300;
+      letter-spacing:var(--tracking-mincho);
+    }
+
+    /* 数値（価格・時刻） */
+    .num{font-variant-numeric:tabular-nums lining-nums}
+
+    /* 改行禁止 */
+    .nowrap{white-space:nowrap}
+
+    /* ─── ヘッダー ─── */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1.5rem clamp(1.2rem,4vw,3rem);
+      border-bottom:var(--rule);
+      background:var(--kinari);
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(110%) blur(6px);
+    }
+    .brand{
+      font-family:var(--font-mincho);
+      font-weight:500;
+      font-size:clamp(1.25rem,2vw,1.6rem);
+      letter-spacing:.22em;
+      line-height:1.1;
+      white-space:nowrap;
+    }
+    .brand small{
+      display:block;
+      font-family:var(--font-sans);
+      font-size:.5em;
+      letter-spacing:.42em;
+      color:var(--mokume);
+      margin-top:.5em;
+      font-weight:400;
+    }
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:0;
+      font-family:var(--font-mincho);
+      font-size:.82rem;
+      letter-spacing:.28em;
+    }
+    nav li{
+      padding:0 clamp(.7rem,1.6vw,1.4rem);
+      border-right:1px solid rgba(28,26,23,.22);
+    }
+    nav li:last-child{border-right:none;padding-right:0}
+    nav li:first-child{padding-left:0}
+    nav a{position:relative;padding:.2em 0;color:var(--sumi);transition:color .3s ease}
+    nav a:hover{color:var(--koke)}
+    @media(max-width:640px){
+      nav{display:none}
+    }
+
+    /* ─── ヒーロー ─── */
+    .hero{
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(220px,.42fr) 1fr;
+      gap:clamp(2rem,5vw,5rem);
+      padding:clamp(3.5rem,8vw,7rem) clamp(1.2rem,4vw,3rem) clamp(4rem,9vw,7rem);
+      align-items:center;
+      overflow:hidden;
+    }
+    @media(max-width:840px){
+      .hero{grid-template-columns:1fr;padding-top:clamp(2.5rem,6vw,5rem)}
+    }
+    .hero-image{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      overflow:hidden;
+    }
+    .hero-image img{
+      width:100%;height:100%;object-fit:cover;
+      filter:grayscale(.45) contrast(.92) brightness(.95);
+      opacity:.32;
+    }
+    .hero-image::after{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(255,255,255,.5), transparent 55%),
+        linear-gradient(180deg, rgba(241,236,226,.4), rgba(241,236,226,.8) 80%, rgba(241,236,226,.95));
+    }
+    /* 湯気の slow fade in */
+    .yuge{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 80%, rgba(255,255,255,.55), transparent 65%),
+        radial-gradient(ellipse 50% 35% at 75% 70%, rgba(255,255,255,.4), transparent 60%),
+        radial-gradient(ellipse 40% 30% at 50% 50%, rgba(255,255,255,.35), transparent 70%);
+      opacity:0;
+      animation:yugeFadeIn 4s ease-out 0.3s forwards;
+      mix-blend-mode:screen;
+    }
+    @keyframes yugeFadeIn{
+      0%{opacity:0;transform:translateY(20px) scale(1.05)}
+      100%{opacity:1;transform:translateY(0) scale(1)}
+    }
+    .hero-tate{
+      writing-mode:vertical-rl;
+      -webkit-writing-mode:vertical-rl;
+      text-orientation:mixed;
+      font-family:var(--font-mincho);
+      font-weight:300;
+      font-size:clamp(2.4rem,5vw,4rem);
+      line-height:1.9;
+      letter-spacing:.45em;
+      color:var(--sumi);
+      margin-left:auto;
+      max-height:clamp(280px,42vw,460px);
+      position:relative;
+      z-index:2;
+    }
+    .hero-tate .kanji{font-size:1.4em;display:block;line-height:1.6}
+    .hero-tate .sub{
+      font-size:.42em;
+      letter-spacing:.6em;
+      color:var(--mokume);
+      margin-top:1.5em;
+      display:block;
+    }
+    @media(max-width:840px){
+      .hero-tate{
+        writing-mode:horizontal-tb;
+        max-height:none;
+        margin:0;
+        font-size:clamp(2rem,7vw,3rem);
+        letter-spacing:.2em;
+        line-height:1.6;
+      }
+      .hero-tate .sub{margin-top:1em;letter-spacing:.4em}
+    }
+
+    .hero-body{position:relative;z-index:2}
+    .hero-body .eyebrow{
+      font-family:var(--font-mincho);
+      font-size:.78rem;
+      letter-spacing:.55em;
+      color:var(--koke);
+      margin-bottom:1.6rem;
+      display:block;
+    }
+    .hero-body h1{
+      font-family:var(--font-mincho);
+      font-weight:300;
+      font-size:clamp(2.2rem,6vw,4.4rem);
+      line-height:1.4;
+      letter-spacing:.12em;
+      margin-bottom:clamp(1.5rem,3vw,2.5rem);
+    }
+    .hero-body h1 .nowrap{white-space:nowrap}
+    .hero-body p.lead{
+      font-size:clamp(.95rem,1.3vw,1.05rem);
+      max-width:38em;
+      color:var(--sumi);
+      opacity:.85;
+      line-height:var(--leading-body);
+    }
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:1rem 2.5rem;
+      margin-top:clamp(2.5rem,5vw,4rem);
+      padding-top:1.6rem;
+      border-top:var(--rule);
+      font-family:var(--font-mincho);
+      font-size:.8rem;
+      letter-spacing:.28em;
+      color:var(--ishi);
+    }
+    .hero-meta b{
+      color:var(--sumi);
+      font-weight:400;
+      letter-spacing:.16em;
+      margin-left:.8em;
+    }
+
+    /* ─── 章見出し共通 ─── */
+    .section-head{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      align-items:end;
+      gap:clamp(1.5rem,3vw,3rem);
+      padding:clamp(3rem,6vw,5rem) clamp(1.2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem);
+      border-top:var(--rule);
+    }
+    @media(max-width:840px){
+      .section-head{grid-template-columns:1fr;align-items:flex-start;gap:.6rem}
+    }
+    .section-head .ord{
+      font-family:var(--font-mincho);
+      font-weight:300;
+      font-size:clamp(2.2rem,4vw,3.2rem);
+      color:var(--koke);
+      line-height:1;
+      letter-spacing:.04em;
+      white-space:nowrap;
+    }
+    .section-head .ord::after{
+      content:"";
+      display:inline-block;
+      width:1.8em;
+      height:1px;
+      background:var(--ishi);
+      margin:0 .8em .3em;
+      vertical-align:middle;
+    }
+    .section-head h2{
+      font-family:var(--font-mincho);
+      font-weight:300;
+      font-size:clamp(1.7rem,3.2vw,2.6rem);
+      letter-spacing:.18em;
+      line-height:1.4;
+    }
+    .section-head h2 small{
+      display:block;
+      font-family:var(--font-sans);
+      font-weight:300;
+      font-size:.36em;
+      letter-spacing:.48em;
+      color:var(--mokume);
+      margin-top:1em;
+    }
+
+    .section-body{
+      padding:0 clamp(1.2rem,4vw,3rem) clamp(4rem,7vw,7rem);
+    }
+
+    /* ─── 施設紹介 ─── */
+    .shisetsu-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));
+      gap:clamp(2rem,4vw,3rem);
+    }
+    .shitsu{
+      background:var(--shoji);
+      border:1px solid rgba(28,26,23,.14);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    .shitsu-img{
+      aspect-ratio:4/3;
+      overflow:hidden;
+      background:var(--ishi);
+    }
+    .shitsu-img img{
+      width:100%;height:100%;object-fit:cover;
+      filter:grayscale(.3) contrast(.94);
+      transition:transform 1.2s ease;
+    }
+    .shitsu:hover .shitsu-img img{transform:scale(1.03)}
+    .shitsu-cap{
+      padding:clamp(1.5rem,2.5vw,2rem);
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    .shitsu-cap .no{
+      font-family:var(--font-mincho);
+      font-size:.7rem;
+      letter-spacing:.5em;
+      color:var(--mokume);
+      margin-bottom:.8rem;
+    }
+    .shitsu-cap h3{
+      font-family:var(--font-mincho);
+      font-weight:400;
+      font-size:1.35rem;
+      letter-spacing:.18em;
+      line-height:1.4;
+      margin-bottom:.6rem;
+    }
+    .shitsu-cap h3 small{
+      display:block;
+      font-family:var(--font-sans);
+      font-weight:300;
+      font-size:.55em;
+      letter-spacing:.35em;
+      color:var(--mokume);
+      margin-top:.7em;
+    }
+    .shitsu-cap p{
+      font-size:.88rem;
+      line-height:1.95;
+      color:var(--sumi);
+      opacity:.82;
+      margin-top:auto;
+      padding-top:1rem;
+    }
+    .shitsu-cap dl{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:.4rem 1rem;
+      font-family:var(--font-mincho);
+      font-size:.78rem;
+      letter-spacing:.18em;
+      color:var(--sumi);
+      opacity:.75;
+      margin-top:1rem;
+      padding-top:1rem;
+      border-top:1px dashed var(--ishi);
+    }
+    .shitsu-cap dt{color:var(--mokume)}
+    .shitsu-cap dd{font-variant-numeric:tabular-nums}
+
+    /* ─── ととのうフロー ─── */
+    .flow-intro{
+      max-width:42em;
+      margin:0 auto clamp(2.5rem,5vw,4rem);
+      padding:0 clamp(1.2rem,4vw,3rem);
+      font-family:var(--font-kana);
+      font-size:clamp(.95rem,1.3vw,1.05rem);
+      line-height:2.2;
+      letter-spacing:.12em;
+      text-align:center;
+      color:var(--sumi);
+    }
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(5,1fr) ;
+      gap:0;
+      align-items:start;
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 clamp(1.2rem,4vw,3rem);
+      position:relative;
+    }
+    @media(max-width:840px){
+      .flow{grid-template-columns:1fr;gap:1rem}
+    }
+    .step{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      padding:1.5rem .8rem;
+      position:relative;
+    }
+    .step .num{
+      font-family:var(--font-mincho);
+      font-weight:300;
+      font-size:.78rem;
+      letter-spacing:.5em;
+      color:var(--mokume);
+      margin-bottom:1.2rem;
+    }
+    .step .circle{
+      width:clamp(5rem,9vw,7rem);
+      height:clamp(5rem,9vw,7rem);
+      border-radius:50%;
+      background:var(--shoji);
+      border:1px solid var(--ishi);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:1.2rem;
+      position:relative;
+    }
+    .step .circle svg{width:48%;height:48%;color:var(--koke)}
+    .step h3{
+      font-family:var(--font-mincho);
+      font-weight:400;
+      font-size:1.15rem;
+      letter-spacing:.22em;
+      line-height:1.5;
+      margin-bottom:.5rem;
+    }
+    .step .mins{
+      font-family:var(--font-mincho);
+      font-size:.72rem;
+      letter-spacing:.35em;
+      color:var(--mokume);
+      font-variant-numeric:tabular-nums;
+    }
+    .step p{
+      font-size:.78rem;
+      line-height:1.85;
+      color:var(--sumi);
+      opacity:.72;
+      margin-top:.8rem;
+      max-width:14em;
+    }
+    /* 矢印（横） */
+    .step:not(:last-child)::after{
+      content:"→";
+      position:absolute;
+      top:calc(1.5rem + 1.2rem + 0.78em + clamp(5rem,9vw,7rem) / 2);
+      right:-.5em;
+      transform:translate(50%,-50%);
+      font-family:var(--font-mincho);
+      font-size:1.2rem;
+      color:var(--ishi);
+      z-index:1;
+    }
+    @media(max-width:840px){
+      .step:not(:last-child)::after{
+        content:"↓";
+        top:auto;
+        bottom:-1.2rem;
+        right:50%;
+        transform:translate(50%,0);
+      }
+    }
+    .step.rest .circle{background:var(--sumi);border-color:var(--sumi)}
+    .step.rest .circle svg{color:var(--kinari)}
+
+    /* ─── クラス表 ─── */
+    .classes-wrap{
+      background:var(--shoji);
+      padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem);
+      border:1px solid rgba(28,26,23,.14);
+      overflow-x:auto;
+    }
+    table.schedule{
+      width:100%;
+      border-collapse:collapse;
+      font-size:.85rem;
+      font-family:var(--font-sans);
+      min-width:640px;
+    }
+    table.schedule th,
+    table.schedule td{
+      padding:1rem .8rem;
+      text-align:left;
+      border-bottom:1px solid rgba(28,26,23,.12);
+      vertical-align:top;
+    }
+    table.schedule th{
+      font-family:var(--font-mincho);
+      font-weight:400;
+      font-size:.78rem;
+      letter-spacing:.35em;
+      color:var(--mokume);
+      border-bottom:1px solid var(--sumi);
+      padding-bottom:1.2rem;
+      white-space:nowrap;
+    }
+    table.schedule td.time{
+      font-family:var(--font-mincho);
+      font-variant-numeric:tabular-nums;
+      letter-spacing:.1em;
+      color:var(--sumi);
+      white-space:nowrap;
+      width:7rem;
+    }
+    table.schedule td.class-name{
+      font-family:var(--font-mincho);
+      font-weight:400;
+      letter-spacing:.12em;
+      color:var(--sumi);
+    }
+    table.schedule td.class-name small{
+      display:block;
+      font-family:var(--font-sans);
+      font-weight:300;
+      font-size:.78em;
+      letter-spacing:.04em;
+      color:var(--mokume);
+      margin-top:.3em;
+    }
+    table.schedule td.day{
+      font-family:var(--font-mincho);
+      font-size:.78rem;
+      letter-spacing:.25em;
+      color:var(--sumi);
+      opacity:.78;
+    }
+    table.schedule td.guide{
+      font-family:var(--font-kana);
+      font-size:.85rem;
+      letter-spacing:.05em;
+      color:var(--koke);
+    }
+    .classes-note{
+      margin-top:1.5rem;
+      font-family:var(--font-kana);
+      font-size:.85rem;
+      letter-spacing:.08em;
+      color:var(--sumi);
+      opacity:.7;
+      line-height:2;
+    }
+
+    /* ─── 料金 ─── */
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));
+      gap:clamp(1.5rem,3vw,2rem);
+    }
+    .plan{
+      background:var(--yuge);
+      border:1px solid rgba(28,26,23,.14);
+      padding:clamp(2rem,3.5vw,2.8rem);
+      display:flex;
+      flex-direction:column;
+      position:relative;
+    }
+    .plan.featured{background:var(--shoji);border-color:var(--koke)}
+    .plan .label{
+      font-family:var(--font-mincho);
+      font-size:.78rem;
+      letter-spacing:.45em;
+      color:var(--mokume);
+      margin-bottom:1rem;
+    }
+    .plan h3{
+      font-family:var(--font-mincho);
+      font-weight:400;
+      font-size:1.5rem;
+      letter-spacing:.18em;
+      line-height:1.4;
+      margin-bottom:.4rem;
+    }
+    .plan h3 small{
+      display:block;
+      font-family:var(--font-sans);
+      font-weight:300;
+      font-size:.5em;
+      letter-spacing:.35em;
+      color:var(--mokume);
+      margin-top:.6em;
+    }
+    .plan .price{
+      font-family:var(--font-mincho);
+      font-weight:300;
+      font-size:clamp(2rem,3.5vw,2.6rem);
+      letter-spacing:.04em;
+      color:var(--sumi);
+      margin:1.5rem 0 .3rem;
+      font-variant-numeric:tabular-nums lining-nums;
+      white-space:nowrap;
+    }
+    .plan .price .yen{font-size:.6em;margin-right:.1em;color:var(--mokume)}
+    .plan .price .unit{font-size:.42em;color:var(--mokume);letter-spacing:.2em;margin-left:.3em}
+    .plan ul{
+      list-style:none;
+      margin:1.5rem 0 2rem;
+      padding-top:1.5rem;
+      border-top:1px solid rgba(28,26,23,.14);
+      flex:1;
+    }
+    .plan li{
+      font-size:.88rem;
+      line-height:1.9;
+      padding:.5rem 0;
+      color:var(--sumi);
+      opacity:.85;
+      position:relative;
+      padding-left:1.2rem;
+    }
+    .plan li::before{
+      content:"・";
+      position:absolute;
+      left:0;
+      color:var(--koke);
+    }
+    .plan .cta{
+      display:inline-block;
+      font-family:var(--font-mincho);
+      font-size:.82rem;
+      letter-spacing:.4em;
+      padding:1rem 1.5rem;
+      border:1px solid var(--sumi);
+      color:var(--sumi);
+      text-align:center;
+      transition:all .4s ease;
+    }
+    .plan .cta:hover{background:var(--sumi);color:var(--kinari)}
+    .plan.featured .cta{background:var(--koke);color:var(--kinari);border-color:var(--koke)}
+    .plan.featured .cta:hover{background:var(--sumi);border-color:var(--sumi)}
+
+    /* ─── 哲学 ─── */
+    .tetsugaku{
+      background:var(--shoji);
+      padding:clamp(4rem,8vw,7rem) clamp(1.2rem,4vw,3rem);
+      text-align:center;
+      border-top:var(--rule);
+      border-bottom:var(--rule);
+    }
+    .tetsugaku blockquote{
+      font-family:var(--font-mincho);
+      font-weight:300;
+      font-size:clamp(1.4rem,2.6vw,2.1rem);
+      line-height:2.4;
+      letter-spacing:.22em;
+      color:var(--sumi);
+      max-width:28em;
+      margin:0 auto 2.5rem;
+      text-wrap:balance;
+    }
+    .tetsugaku-body{
+      max-width:36em;
+      margin:0 auto;
+      font-size:clamp(.92rem,1.3vw,1rem);
+      line-height:var(--leading-body);
+      color:var(--sumi);
+      opacity:.85;
+    }
+    .tetsugaku-body p + p{margin-top:1.4em}
+    .tetsugaku cite{
+      display:block;
+      font-style:normal;
+      font-family:var(--font-kana);
+      font-size:.85rem;
+      letter-spacing:.3em;
+      color:var(--mokume);
+      margin-top:2.5rem;
+    }
+    .tetsugaku cite::before{content:"——  "}
+
+    /* ─── スタッフ ─── */
+    .staff{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));
+      gap:clamp(2rem,4vw,3rem);
+    }
+    .person{
+      display:flex;
+      flex-direction:column;
+    }
+    .person-img{
+      aspect-ratio:3/4;
+      overflow:hidden;
+      background:var(--ishi);
+      margin-bottom:1.5rem;
+    }
+    .person-img img{
+      width:100%;height:100%;object-fit:cover;
+      filter:grayscale(.6) contrast(.92) brightness(.98);
+    }
+    .person .title{
+      font-family:var(--font-mincho);
+      font-size:.78rem;
+      letter-spacing:.45em;
+      color:var(--koke);
+      margin-bottom:.7rem;
+      white-space:nowrap;
+    }
+    .person h3{
+      font-family:var(--font-mincho);
+      font-weight:400;
+      font-size:1.4rem;
+      letter-spacing:.16em;
+      line-height:1.4;
+      margin-bottom:.3rem;
+    }
+    .person .yomi{
+      font-family:var(--font-sans);
+      font-weight:300;
+      font-size:.78rem;
+      letter-spacing:.3em;
+      color:var(--mokume);
+      margin-bottom:1.2rem;
+    }
+    .person p{
+      font-size:.88rem;
+      line-height:1.95;
+      color:var(--sumi);
+      opacity:.85;
+    }
+    .person figcaption{
+      font-family:var(--font-kana);
+      font-size:.82rem;
+      letter-spacing:.08em;
+      color:var(--sumi);
+      opacity:.7;
+      margin-top:1rem;
+      line-height:1.85;
+    }
+
+    /* ─── アクセス ─── */
+    .access{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:clamp(2rem,5vw,5rem);
+      align-items:start;
+    }
+    @media(max-width:840px){
+      .access{grid-template-columns:1fr}
+    }
+    .access-info{
+      font-family:var(--font-mincho);
+    }
+    .access-info h3{
+      font-family:var(--font-mincho);
+      font-weight:400;
+      font-size:1.5rem;
+      letter-spacing:.18em;
+      line-height:1.4;
+      margin-bottom:1.8rem;
+      padding-bottom:1rem;
+      border-bottom:var(--rule);
+    }
+    .access-info h3 small{
+      display:block;
+      font-family:var(--font-sans);
+      font-weight:300;
+      font-size:.5em;
+      letter-spacing:.4em;
+      color:var(--mokume);
+      margin-top:.6em;
+    }
+    .access-info dl{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:1.2rem 1.5rem;
+      font-size:.88rem;
+      letter-spacing:.1em;
+      line-height:1.9;
+    }
+    .access-info dt{
+      color:var(--mokume);
+      letter-spacing:.3em;
+      white-space:nowrap;
+      font-size:.78rem;
+      padding-top:.2em;
+    }
+    .access-info dd{
+      color:var(--sumi);
+      font-family:var(--font-sans);
+      font-weight:300;
+      font-variant-numeric:tabular-nums;
+    }
+    .mochimono{
+      background:var(--shoji);
+      padding:clamp(1.8rem,3.5vw,2.8rem);
+      border:1px solid rgba(28,26,23,.14);
+    }
+    .mochimono h3{
+      font-family:var(--font-mincho);
+      font-weight:400;
+      font-size:1.3rem;
+      letter-spacing:.18em;
+      margin-bottom:1.5rem;
+    }
+    .mochimono h3 small{
+      display:block;
+      font-family:var(--font-sans);
+      font-weight:300;
+      font-size:.5em;
+      letter-spacing:.4em;
+      color:var(--mokume);
+      margin-top:.6em;
+    }
+    .mochimono ul{
+      list-style:none;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:.6rem;
+    }
+    .mochimono li{
+      font-size:.88rem;
+      padding:.6rem 0 .6rem 1.6rem;
+      border-bottom:1px dashed var(--ishi);
+      position:relative;
+      line-height:1.7;
+    }
+    .mochimono li::before{
+      content:"◯";
+      position:absolute;
+      left:0;
+      top:.6rem;
+      font-size:.7rem;
+      color:var(--koke);
+    }
+    .mochimono li.rental::before{content:"◇";color:var(--mokume)}
+    .mochimono li small{
+      display:block;
+      font-family:var(--font-kana);
+      font-size:.78em;
+      letter-spacing:.05em;
+      color:var(--mokume);
+      margin-top:.2em;
+    }
+    .mochimono-note{
+      font-family:var(--font-kana);
+      font-size:.82rem;
+      line-height:1.95;
+      color:var(--sumi);
+      opacity:.7;
+      margin-top:1.5rem;
+      padding-top:1.5rem;
+      border-top:1px solid var(--ishi);
+    }
+
+    /* ─── 招きCTA ─── */
+    .invite{
+      padding:clamp(4rem,7vw,6rem) clamp(1.2rem,4vw,3rem);
+      background:var(--sumi);
+      color:var(--kinari);
+      text-align:center;
+    }
+    .invite h2{
+      font-family:var(--font-mincho);
+      font-weight:300;
+      font-size:clamp(1.8rem,3.8vw,2.8rem);
+      letter-spacing:.22em;
+      line-height:1.6;
+      margin-bottom:1.5rem;
+    }
+    .invite p{
+      max-width:32em;
+      margin:0 auto 2.5rem;
+      font-size:.95rem;
+      line-height:2.1;
+      color:var(--shoji);
+      opacity:.85;
+    }
+    .invite-actions{
+      display:flex;
+      gap:1.5rem;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .invite a{
+      font-family:var(--font-mincho);
+      font-weight:400;
+      font-size:.88rem;
+      letter-spacing:.45em;
+      padding:1.2rem 2.5rem;
+      border:1px solid var(--kinari);
+      color:var(--kinari);
+      display:inline-block;
+      transition:all .5s ease;
+      white-space:nowrap;
+    }
+    .invite a:hover{
+      background:var(--kinari);
+      color:var(--sumi);
+    }
+    .invite a.primary{
+      background:var(--koke);
+      border-color:var(--koke);
+    }
+    .invite a.primary:hover{
+      background:var(--kinari);
+      color:var(--sumi);
+      border-color:var(--kinari);
+    }
+
+    /* ─── フッター ─── */
+    footer{
+      padding:clamp(3rem,5vw,4rem) clamp(1.2rem,4vw,3rem) 2rem;
+      border-top:var(--rule);
+      display:grid;
+      grid-template-columns:1fr;
+      gap:2rem;
+      background:var(--kinari);
+    }
+    @media(min-width:780px){
+      footer{grid-template-columns:1fr auto;align-items:end}
+    }
+    footer .brand{font-size:1.15rem}
+    footer .links{
+      display:flex;flex-wrap:wrap;
+      gap:1rem 2.5rem;
+      font-family:var(--font-mincho);font-size:.78rem;letter-spacing:.32em;color:var(--ishi);
+      list-style:none;
+    }
+    footer .copyr{
+      grid-column:1/-1;
+      font-family:var(--font-mincho);
+      font-size:.7rem;
+      letter-spacing:.45em;
+      color:var(--ishi);
+      padding-top:1.5rem;
+      border-top:1px dashed rgba(28,26,23,.14);
+    }
+
+    /* アニメーション (湯気以外) */
+    @keyframes fadeup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+    .reveal{animation:fadeup 1.2s cubic-bezier(.2,.7,.2,1) both}
+    .delay-1{animation-delay:.15s}
+    .delay-2{animation-delay:.3s}
+    .delay-3{animation-delay:.45s}
+    .delay-4{animation-delay:.6s}
+
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{
+        animation-duration:0!important;
+        animation-iteration-count:1!important;
+        transition-duration:0!important;
+      }
+      .yuge{animation:none;opacity:.7}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#" aria-label="蒼 AOI WELLNESS HOUSE">
+    蒼
+    <small>AOI WELLNESS HOUSE</small>
+  </a>
+  <nav aria-label="メインナビゲーション">
+    <ul>
+      <li><a href="#shisetsu">施設</a></li>
+      <li><a href="#flow">ととのう</a></li>
+      <li><a href="#classes">クラス</a></li>
+      <li><a href="#pricing">料金</a></li>
+      <li><a href="#staff">案内人</a></li>
+      <li><a href="#access">案内</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-image" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=1600&q=82" alt="" loading="eager" />
+    </div>
+    <div class="yuge" aria-hidden="true"></div>
+
+    <div class="hero-tate">
+      <span class="kanji">ととのう</span>
+      <span class="sub">TOTONOU ── BREATHE</span>
+    </div>
+
+    <div class="hero-body">
+      <span class="eyebrow">AOI ── 蒼 WELLNESS HOUSE</span>
+      <h1 id="hero-title">
+        鍛えるのではなく、<br>
+        <span class="nowrap">整える</span>時間を。
+      </h1>
+      <p class="lead">
+        サウナ、水風呂、外気浴。ピラティス、瞑想、深い呼吸。<br>
+        都市の喧騒から少しだけ離れ、自律神経を取り戻す retreat。<br>
+        蒼は、結果を急がず、自分の呼吸を聴くためのウェルネスハウスです。
+      </p>
+      <div class="hero-meta">
+        <span>所在<b>東京 ・ 神楽坂</b></span>
+        <span>開業<b>令和六年 春</b></span>
+        <span>定員<b class="num">一日 三十名</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 施設 ─── -->
+  <section id="shisetsu" aria-labelledby="shisetsu-title">
+    <div class="section-head">
+      <div class="ord">壹</div>
+      <h2 id="shisetsu-title">
+        五つの間（ま）
+        <small>FIVE ROOMS — FACILITIES</small>
+      </h2>
+    </div>
+    <div class="section-body">
+      <div class="shisetsu-grid">
+
+        <article class="shitsu reveal">
+          <div class="shitsu-img">
+            <img src="https://images.unsplash.com/photo-1611042553365-9b101441c135?auto=format&fit=crop&w=900&q=80" alt="木で組まれたサウナ室の暗がりとストーブ" loading="lazy" />
+          </div>
+          <div class="shitsu-cap">
+            <p class="no">第一の間</p>
+            <h3>サウナ室<small>SAUNA ROOM</small></h3>
+            <p>あすなろ材で組んだ二段ベンチ。薪の薫りを残すストーブ。室温は穏やかな八十度、湿度は重めに調えています。</p>
+            <dl>
+              <dt>温度</dt><dd class="num">80℃ 前後</dd>
+              <dt>定員</dt><dd class="num">八名</dd>
+              <dt>備考</dt><dd>セルフロウリュ可</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="shitsu reveal delay-1">
+          <div class="shitsu-img">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80" alt="石でしつらえた水風呂の水面" loading="lazy" />
+          </div>
+          <div class="shitsu-cap">
+            <p class="no">第二の間</p>
+            <h3>水風呂<small>MIZUBURO</small></h3>
+            <p>地下水を引いた、四角い石組みの水風呂。羽衣を壊さぬよう、注水はゆるやかに。十六度の柔らかな冷たさ。</p>
+            <dl>
+              <dt>水温</dt><dd class="num">16℃ 前後</dd>
+              <dt>深さ</dt><dd class="num">110 cm</dd>
+              <dt>備考</dt><dd>地下水掛け流し</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="shitsu reveal delay-2">
+          <div class="shitsu-img">
+            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=900&q=80" alt="木のデッキとリクライニングチェアの外気浴スペース" loading="lazy" />
+          </div>
+          <div class="shitsu-cap">
+            <p class="no">第三の間</p>
+            <h3>外気浴ととのいスペース<small>GAIKIYOKU</small></h3>
+            <p>屋上の木のデッキ。リクライニングが八脚と、寝そべるベンチ。風と木漏れ日が、ととのう時間を仕上げます。</p>
+            <dl>
+              <dt>場所</dt><dd>屋上テラス</dd>
+              <dt>席数</dt><dd class="num">十二席</dd>
+              <dt>備考</dt><dd>ブランケット貸出</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="shitsu reveal delay-3">
+          <div class="shitsu-img">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="無垢板の床と障子の柔らかな光が満ちるピラティススタジオ" loading="lazy" />
+          </div>
+          <div class="shitsu-cap">
+            <p class="no">第四の間</p>
+            <h3>ピラティススタジオ<small>PILATES STUDIO</small></h3>
+            <p>檜の床、障子越しの自然光。リフォーマー六台、マットエリア八名分。少人数で、深く呼吸する時間です。</p>
+            <dl>
+              <dt>広さ</dt><dd class="num">42 ㎡</dd>
+              <dt>機材</dt><dd>リフォーマー 6 台</dd>
+              <dt>備考</dt><dd>1 クラス 上限 8 名</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="shitsu reveal delay-4">
+          <div class="shitsu-img">
+            <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=900&q=80" alt="畳と座布団、香炉のしつらえの瞑想室" loading="lazy" />
+          </div>
+          <div class="shitsu-cap">
+            <p class="no">第五の間</p>
+            <h3>瞑想室<small>MEDITATION ROOM</small></h3>
+            <p>畳敷きの小間。香を一炷、ろうそく一灯。呼吸案内人の声で、十五分の止観（しかん）に身を委ねます。</p>
+            <dl>
+              <dt>広さ</dt><dd>八畳</dd>
+              <dt>定員</dt><dd class="num">六名</dd>
+              <dt>備考</dt><dd>椅子座も可</dd>
+            </dl>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ととのうフロー ─── -->
+  <section id="flow" aria-labelledby="flow-title">
+    <div class="section-head">
+      <div class="ord">貳</div>
+      <h2 id="flow-title">
+        ととのうまでの順序
+        <small>FIVE STEPS TO TOTONOU</small>
+      </h2>
+    </div>
+    <div class="section-body">
+      <p class="flow-intro">
+        急がず、無理せず。<br>
+        身体が「いま、外気浴へ」と告げる感覚を、<br>
+        ひとつずつ確かめながら過ごしてください。
+      </p>
+      <ol class="flow" role="list">
+
+        <li class="step">
+          <span class="num">一</span>
+          <div class="circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M3 14 Q6 11 9 14 T15 14 T21 14" />
+              <path d="M3 18 Q6 15 9 18 T15 18 T21 18" />
+              <path d="M3 10 Q6 7 9 10 T15 10 T21 10" />
+            </svg>
+          </div>
+          <h3>入浴</h3>
+          <span class="mins">5 〜 10 分</span>
+          <p>はじめに身体を温める。湯で巡りを起こし、汗腺をひらく。</p>
+        </li>
+
+        <li class="step">
+          <span class="num">二</span>
+          <div class="circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M6 4 L6 14" />
+              <path d="M12 4 L12 14" />
+              <path d="M18 4 L18 14" />
+              <path d="M3 14 L21 14 L19 20 L5 20 Z" />
+            </svg>
+          </div>
+          <h3>サウナ</h3>
+          <span class="mins">8 〜 12 分</span>
+          <p>深く息を吸い、長く吐く。額に汗が伝うのを、ただ眺める。</p>
+        </li>
+
+        <li class="step">
+          <span class="num">三</span>
+          <div class="circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M4 16 Q8 12 12 16 T20 16" />
+              <path d="M4 12 Q8 8 12 12 T20 12" />
+              <path d="M4 20 Q8 18 12 20 T20 20" />
+            </svg>
+          </div>
+          <h3>水風呂</h3>
+          <span class="mins">1 〜 2 分</span>
+          <p>羽衣をまとう。胸まで沈め、息を整え、皮膚の表面を信じる。</p>
+        </li>
+
+        <li class="step">
+          <span class="num">四</span>
+          <div class="circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <circle cx="12" cy="8" r="3" />
+              <path d="M5 20 Q12 14 19 20" />
+              <path d="M2 14 L4 14" />
+              <path d="M20 14 L22 14" />
+            </svg>
+          </div>
+          <h3>外気浴</h3>
+          <span class="mins">10 〜 15 分</span>
+          <p>椅子に体を預ける。風が、肌の上を通る。それだけを聴く。</p>
+        </li>
+
+        <li class="step rest">
+          <span class="num">五</span>
+          <div class="circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M8 4 Q15 6 16 12 Q15 18 8 20" />
+              <path d="M8 4 L8 20" />
+            </svg>
+          </div>
+          <h3>休</h3>
+          <span class="mins">自由</span>
+          <p>白湯を一杯。畳に横たわるも、本を開くも、お任せします。</p>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─── 週間クラス表 ─── -->
+  <section id="classes" aria-labelledby="classes-title">
+    <div class="section-head">
+      <div class="ord">參</div>
+      <h2 id="classes-title">
+        週間クラス
+        <small>WEEKLY CLASSES</small>
+      </h2>
+    </div>
+    <div class="section-body">
+      <div class="classes-wrap">
+        <table class="schedule" aria-label="週間クラス表">
+          <thead>
+            <tr>
+              <th>時刻</th>
+              <th>クラス</th>
+              <th>曜日</th>
+              <th>案内</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="time num">07:00 — 07:45</td>
+              <td class="class-name">朝のピラティス<small>Morning Mat Pilates</small></td>
+              <td class="day">月 ・ 水 ・ 金</td>
+              <td class="guide">三浦 詠</td>
+            </tr>
+            <tr>
+              <td class="time num">10:00 — 10:50</td>
+              <td class="class-name">リフォーマー基礎<small>Reformer Basic</small></td>
+              <td class="day">火 ・ 木</td>
+              <td class="guide">藤代 美月</td>
+            </tr>
+            <tr>
+              <td class="time num">11:30 — 12:15</td>
+              <td class="class-name">陰ヨガ<small>Yin Yoga</small></td>
+              <td class="day">水 ・ 土</td>
+              <td class="guide">三浦 詠</td>
+            </tr>
+            <tr>
+              <td class="time num">12:30 — 13:00</td>
+              <td class="class-name">呼吸法と止観<small>Breath &amp; Stillness</small></td>
+              <td class="day">月 〜 金</td>
+              <td class="guide">渡会 静也</td>
+            </tr>
+            <tr>
+              <td class="time num">18:00 — 18:30</td>
+              <td class="class-name">夕の瞑想<small>Evening Meditation</small></td>
+              <td class="day">火 ・ 木 ・ 土</td>
+              <td class="guide">渡会 静也</td>
+            </tr>
+            <tr>
+              <td class="time num">19:00 — 19:45</td>
+              <td class="class-name">軽い有酸素<small>Slow Aerobic Flow</small></td>
+              <td class="day">月 ・ 木</td>
+              <td class="guide">藤代 美月</td>
+            </tr>
+            <tr>
+              <td class="time num">20:00 — 20:45</td>
+              <td class="class-name">夜のピラティス<small>Restorative Pilates</small></td>
+              <td class="day">火 ・ 金</td>
+              <td class="guide">三浦 詠</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="classes-note">
+        ※ クラスは先着順・各回 定員制。ご予約はお電話または予約ページにて承ります。<br>
+        ※ サウナ・水風呂のご利用はクラスの前後どちらでも可能です。
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── 料金 ─── -->
+  <section id="pricing" aria-labelledby="pricing-title">
+    <div class="section-head">
+      <div class="ord">肆</div>
+      <h2 id="pricing-title">
+        ご利用案内
+        <small>PRICING — THREE WAYS</small>
+      </h2>
+    </div>
+    <div class="section-body">
+      <div class="pricing">
+
+        <article class="plan">
+          <span class="label">一</span>
+          <h3>ドロップイン<small>SINGLE VISIT</small></h3>
+          <p class="price"><span class="yen">¥</span><span class="num">4,800</span><span class="unit">/ 一回</span></p>
+          <ul>
+            <li>サウナ・水風呂・外気浴 すべて利用可</li>
+            <li>クラスは別途 受講料 ¥2,200</li>
+            <li>滞在時間 三時間まで</li>
+            <li>タオル・館内着の貸出を含む</li>
+          </ul>
+          <a href="#invite" class="cta">ご予約</a>
+        </article>
+
+        <article class="plan featured">
+          <span class="label">二</span>
+          <h3>月会員<small>MONTHLY MEMBER</small></h3>
+          <p class="price"><span class="yen">¥</span><span class="num">22,000</span><span class="unit">/ 月</span></p>
+          <ul>
+            <li>サウナ・水風呂・外気浴 無制限</li>
+            <li>クラス 月 八回まで受講可</li>
+            <li>会員割引（同伴一名様 半額）</li>
+            <li>専用ロッカーの常設</li>
+          </ul>
+          <a href="#invite" class="cta">ご予約</a>
+        </article>
+
+        <article class="plan">
+          <span class="label">三</span>
+          <h3>個室会員<small>PRIVATE MEMBER</small></h3>
+          <p class="price"><span class="yen">¥</span><span class="num">66,000</span><span class="unit">/ 月</span></p>
+          <ul>
+            <li>個室サウナ・専用水風呂 月 六回</li>
+            <li>クラス 受講無制限</li>
+            <li>整え手・呼吸案内人による個別指導</li>
+            <li>入会金免除・先行予約権</li>
+          </ul>
+          <a href="#invite" class="cta">見学のご案内</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 哲学 ─── -->
+  <section class="tetsugaku" aria-labelledby="tetsugaku-title">
+    <blockquote id="tetsugaku-title">
+      整えるとは、<br>
+      足すことではなく、<br>
+      引いていく時間である。
+    </blockquote>
+    <div class="tetsugaku-body">
+      <p>
+        蒼は、結果や数値を競う場所ではありません。重さや回数を追わず、深く吸い、長く吐く。日々の緊張を、湯と水と風に少しずつ預けていく場所です。
+      </p>
+      <p>
+        身体は、本当はもう知っています。「いま温まりたい」「いま冷やしたい」「いま、ただ風に当たりたい」。その小さな声を聴き返す稽古を、私たちは「整える」と呼んでいます。
+      </p>
+    </div>
+    <cite>蒼 主宰 ・ 渡会 静也</cite>
+  </section>
+
+  <!-- ─── スタッフ ─── -->
+  <section id="staff" aria-labelledby="staff-title">
+    <div class="section-head">
+      <div class="ord">伍</div>
+      <h2 id="staff-title">
+        案内する人
+        <small>OUR GUIDES</small>
+      </h2>
+    </div>
+    <div class="section-body">
+      <div class="staff">
+
+        <figure class="person reveal">
+          <div class="person-img">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=82" alt="ピラティス整え手 三浦 詠" loading="lazy" />
+          </div>
+          <span class="title">整え手</span>
+          <h3>三浦 詠</h3>
+          <p class="yomi">MIURA EI</p>
+          <p>ピラティスインストラクター。BASI Pilates 修了。リフォーマーを用いた骨格の調整と、デスクワーカーの肩・腰の整えを得意とする。「無理に伸ばさない」を信条に。</p>
+          <figcaption>担当 ── 朝のピラティス、リフォーマー基礎、夜のピラティス</figcaption>
+        </figure>
+
+        <figure class="person reveal delay-1">
+          <div class="person-img">
+            <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=800&q=82" alt="呼吸案内人 渡会 静也" loading="lazy" />
+          </div>
+          <span class="title">呼吸案内人</span>
+          <h3>渡会 静也</h3>
+          <p class="yomi">WATARAI SHIZUYA</p>
+          <p>蒼の主宰。京都の禅寺で参禅、その後マインドフルネスを学ぶ。サウナ・呼吸・瞑想を一本の線で結ぶプログラムを設計。低く穏やかな声が、深い止観を導きます。</p>
+          <figcaption>担当 ── 呼吸法と止観、夕の瞑想、ロウリュ</figcaption>
+        </figure>
+
+        <figure class="person reveal delay-2">
+          <div class="person-img">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=82" alt="ヨガ整え手 藤代 美月" loading="lazy" />
+          </div>
+          <span class="title">整え手</span>
+          <h3>藤代 美月</h3>
+          <p class="yomi">FUJISHIRO MITSUKI</p>
+          <p>ヨガ指導歴 十二年。陰ヨガとリストラティブを軸に、自律神経を緩める時間を設計する。経絡の手当てにも通じ、月に一度の個別整体も担当しています。</p>
+          <figcaption>担当 ── 陰ヨガ、軽い有酸素、個別整体</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── アクセス ─── -->
+  <section id="access" aria-labelledby="access-title">
+    <div class="section-head">
+      <div class="ord">陸</div>
+      <h2 id="access-title">
+        ご案内
+        <small>ACCESS &amp; PRACTICAL</small>
+      </h2>
+    </div>
+    <div class="section-body">
+      <div class="access">
+
+        <div class="access-info">
+          <h3>営業 ・ 所在<small>HOURS &amp; LOCATION</small></h3>
+          <dl>
+            <dt>所在</dt><dd>東京都新宿区神楽坂 ◯ ─ 三 ─ 七<br>蒼ハウス 地下一階 ・ 屋上</dd>
+            <dt>最寄</dt><dd>東京メトロ 神楽坂駅 ・ 徒歩 三分</dd>
+            <dt>営業</dt><dd>火 〜 金 ・ <span class="num">07:00 — 22:00</span><br>土 ・ 日 ・ <span class="num">08:00 — 20:00</span></dd>
+            <dt>定休</dt><dd>月曜日、第三火曜日</dd>
+            <dt>電話</dt><dd class="num">03 — 6233 — 0×××</dd>
+            <dt>予約</dt><dd>Web 予約・お電話 どちらも</dd>
+          </dl>
+        </div>
+
+        <aside class="mochimono" aria-labelledby="mochi-title">
+          <h3 id="mochi-title">お持ち物<small>WHAT TO BRING</small></h3>
+          <ul>
+            <li>水分補給用の水筒
+              <small>受付に常温水・白湯ご用意あり</small>
+            </li>
+            <li>ご自身のスキンケア用品
+              <small>シャワー後の保湿に</small>
+            </li>
+            <li class="rental">館内着・タオル（貸出無料）
+              <small>麻と綿の生成り。手ぶらでお越しください</small>
+            </li>
+            <li class="rental">サウナハット（貸出 ¥200）
+              <small>頭部を熱から守ります</small>
+            </li>
+            <li class="rental">ピラティスマット（貸出無料）
+              <small>マイマットの持ち込みも可</small>
+            </li>
+          </ul>
+          <p class="mochimono-note">
+            水着・タトゥーカバーは不要です。館内着のままサウナ・水風呂・外気浴をお楽しみいただけます。
+          </p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 招きCTA ─── -->
+  <section id="invite" class="invite" aria-labelledby="invite-title">
+    <h2 id="invite-title">
+      静かな一日を、<br>
+      お預けください。
+    </h2>
+    <p>
+      初めての方には、館内をご案内するお時間を設けております。<br>
+      ご都合のよい日に、どうぞ蒼へお越しください。
+    </p>
+    <div class="invite-actions">
+      <a href="#" class="primary">ご予約</a>
+      <a href="#">見学のご案内</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>
+    <a class="brand" href="#">
+      蒼
+      <small>AOI WELLNESS HOUSE</small>
+    </a>
+  </div>
+  <ul class="links">
+    <li>施設のこと</li>
+    <li>ととのう</li>
+    <li>クラス</li>
+    <li>ご利用案内</li>
+    <li>案内する人</li>
+    <li>ご案内</li>
+  </ul>
+  <div class="copyr">© 令和六年 蒼 AOI WELLNESS HOUSE ─ A FICTITIOUS RETREAT FOR DESIGN STUDY</div>
+</footer>
+
+<script>
+  // 軽い手書き感のためのIntersection（湯気以外の reveal は scroll-trigger）
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.style.animationPlayState='running';
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el=>{
+      el.style.animationPlayState='paused';
+      io.observe(el);
+    });
+  }
+</script>
+</body>
+</html>
