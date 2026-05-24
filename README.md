@@ -31,4 +31,7 @@
 
 ## 公開
 
-GitHub Pages で `design.fitness-gym-totonoi.riumu.net` にホスト予定。
+GitHub Pages にて公開済（HTTPS 強制 ON、Let's Encrypt 証明書 approved）。
+
+- **Live**: <https://design.fitness-gym-totonoi.riumu.net/>
+- **Repo**: <https://github.com/torifo/design-fitness-gym-totonoi>
