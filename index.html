@@ -194,11 +194,18 @@
       letter-spacing:.45em;
       color:var(--sumi);
       margin-left:auto;
-      max-height:clamp(280px,42vw,460px);
+      max-height:min(72vh,620px);
       position:relative;
       z-index:2;
     }
-    .hero-tate .kanji{font-size:1.4em;display:block;line-height:1.6}
+    .hero-tate .kanji{
+      font-size:1.4em;
+      display:block;
+      line-height:1.25;
+      white-space:nowrap;
+      word-break:keep-all;
+      overflow-wrap:normal;
+    }
     .hero-tate .sub{
       font-size:.42em;
       letter-spacing:.6em;
