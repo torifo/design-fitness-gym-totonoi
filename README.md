@@ -35,3 +35,19 @@ GitHub Pages にて公開済（HTTPS 強制 ON、Let's Encrypt 証明書 approve
 
 - **Live**: <https://design.fitness-gym-totonoi.riumu.net/>
 - **Repo**: <https://github.com/torifo/design-fitness-gym-totonoi>
+
+
+## Install as a skill / スキルとして導入
+
+This repo ships a cross-agent **`SKILL.md`** (open standard) usable by both Claude Code and Codex CLI as a design-reference skill. Link the repo into the agent's skills directory:
+
+このリポジトリは Claude Code / Codex CLI 共通の **`SKILL.md`**（オープン標準）を同梱し、デザイン参照スキルとして使えます。
+
+```bash
+# Claude Code
+ln -s "$(pwd)" ~/.claude/skills/design-fitness-gym-totonoi
+# Codex CLI
+ln -s "$(pwd)" ~/.codex/skills/design-fitness-gym-totonoi
+```
+
+Restart the agent; it is matched automatically by the skill's `description` (skill name: `design-fitness-gym-totonoi`). / エージェント再起動後、`description` に基づき自動マッチします。
